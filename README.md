@@ -1,24 +1,57 @@
-# README
+# Finance Portfolio Application 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A system to replace excel spreadshreet (example) by using a form capture of balances over periods of time. <br>
+An interactive dashboard to display captured balances and other database queries 
 
-Things you may want to cover:
+## Account Creation Form 
+- Name
+- Country 
+- Currency
+- Users
+- UBO
+- Tags 
 
-* Ruby version
+## Input form 
+  Balance amount 
+  Account Name
+  Balance date 
 
-* System dependencies
+### User Roles 
+  Policies and Scopes (Pundit)
 
-* Configuration
+### Dashboard 
+    Selector Selected currency 
+      - (convert all values via exchange model to selected currency using releative date exchange rate)
+    Button `New Balance`
+    Button `New Account` 
+## D3 Graphs (https://d3-graph-gallery.com)
+    Plot Graph (Time to Value)
+    Bar Graph (Time to Value)
+    Pie Chart (Account Balance to Portfolio)
+    Stack Bar Graph (Time,Value, Accounts)
+#### Data table showing;
+  Portfolio balance 
+  Account balances 
+  Exchange Rates () 
+  Percentage (%) change over period
+    Column logic (if postive green, negative red, no change yellow)
 
-* Database creation
+## Gems Required / Packages / Libraries
+Active Admin 
+Devise 
+React 
+Postgres
+active model serilizer 
+D3 Graphs
 
-* Database initialization
+## Models 
+- User (A person that can login to the system)
+- Account 
+- Tag
+- UBO (Ultimate Benecificary Owner)
+    - `Portfolio` (All accounts associated with UBO)
+- Balance (`Amount` for an `Account` on a date)
+- Currency
+- ExchangeRate (Conversion from one currency to another)  
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+UBO.first.portfolio = List of accounts for UBO 
