@@ -6,15 +6,14 @@ import moment from "moment/moment";
 export const Dashboard = () => {
   const [accounts, setAccounts] = useState([]);
   let currentdate = new Date();
-  let threeMonthsLater = new Date(
-    currentdate.setMonth(currentdate.getMonth() + 3)
+  let threeMonthsAgo = new Date(
+    currentdate.setMonth(currentdate.getMonth() - 3)
   );
-
   const [startDate, setStartDate] = useState(
-    moment(new Date()).format("YYYY-MM-01")
+    moment(threeMonthsAgo).format("YYYY-MM-01")
   );
   const [endDate, setEndDate] = useState(
-    moment(threeMonthsLater).format("YYYY-MM-01")
+    moment(new Date()).format("YYYY-MM-01")
   );
 
   useEffect(() => {

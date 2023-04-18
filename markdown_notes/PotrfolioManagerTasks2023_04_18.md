@@ -1,0 +1,24 @@
+# Outstanding
+
+- Currency Picker
+  - Create a dropdown to allow the `User` to choose a `Currency`.
+  - Should convert all values on dashboard to chosen `Currency`.
+  - The value of each `Balance` on the page should be relative to the `ExchangeRate` at the relevant date.
+- Exchange Rate Worker
+  - Create an asynchronous job to run periodically (on the first day of the month) to hit a 3rd party api - Fixer (`fixer.io`) - to pull the exchange rate between each currency combination and create new `ExchangeRate` instances.
+  - The combinations need to be bi-directional ie: The exchange rate from `USD` to `ZAR` and from `ZAR` to `USD`
+- Forms
+  - Create 2 forms at the top of the dashboard page.
+    - A form to create a new `Balance` for an `Account`
+    - A form to create `Accounts`
+  - After creating a `Balance` or an `Account` all values on the dashboard should reflect the changes.
+  - All form fields described in the README are required. Ie there are no optional fields on the forms.
+- Graphs
+  - Use D3 graphing library to create the described graphs in the README
+  - All graphs should respond to changes to the start and end dates as well as changes to `Accounts` and `Balances`
+- Authorization
+  - Add pundit for data scoping and authorization
+- Authentication
+  - Add User model and add basic auth using Devise
+- Administration
+  - Add activeadmin for superuser admin tasks
