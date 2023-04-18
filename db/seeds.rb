@@ -1,7 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+Currency.create({"name"=>"South African Rand", "symbol"=>"R", "iso_name"=>"ZAR"})
+Currency.create({"name"=>"US Dollar", "symbol"=>"$", "iso_name"=>"USD"})
+Account.create({"name"=>"Jay's Account", "country"=>"South Africa", "currency_id"=>1})
+Account.create({"name"=>"Test 2", "country"=>"South Africa", "currency_id"=>1})
+Balance.create({"amount"=>0.2255e2, "balance_date"=>"Fri, 14 Apr 2023 20:46:52.558727000 UTC +00:00", "account_id"=>1, "exchange_rate_id"=>1})
+Balance.create({"amount"=>0.2255e2, "balance_date"=>"Fri, 17 Feb 2023 22:48:21.216149000 UTC +00:00", "account_id"=>1, "exchange_rate_id"=>1})
+Balance.create({"amount"=>0.10042e3, "balance_date"=>"Fri, 17 Feb 2023 22:48:21.216149000 UTC +00:00", "account_id"=>2, "exchange_rate_id"=>1})
+UltimateBenificiaryOwner.create({"name"=>"Jay Meyerowitz"})
+ExchangeRate.create({"from_currency_id"=>1, "to_currency_id"=>2, "rate"=>0.5e0})
